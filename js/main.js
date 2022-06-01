@@ -1,3 +1,5 @@
+const navigation = document.querySelector('#navigation')
+
 window.addEventListener("scroll", onScroll);
 onScroll();
 //function scroll
@@ -17,9 +19,11 @@ function showNavOnScroll() {
 }
 
 function showBackToTopButtonOnScroll() {
-  if (scrollY > 400) {
+  if (scrollY > 500) {
+    let backToTopButton = document.querySelector('#backToTopButton');
     backToTopButton.classList.add("show");
   } else {
+    let backToTopButton = document.querySelector('#backToTopButton');
     backToTopButton.classList.remove("show");
   }
 }
