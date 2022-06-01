@@ -13,12 +13,14 @@
 
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
+  --brand-light-2: hsl(calc(var(--hue) + 10), 14%, 97%);
+
   --brand-btn-hover: hsl(var(--hue), 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%);
 
   font-size: 62.5%; /* 1rem = 10px */
-  --clr-white: hsl(0, 0%, 100%);
+
   --nav-height: 7.2rem;
 }
 
@@ -72,7 +74,7 @@ a {
   padding: 1.6rem 3.2rem;
   width: fit-content;
 
-  color: var(--clr-white);
+  color: var(--brand-light-2);
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -235,12 +237,12 @@ body.menu-expanded .menu {
 }
 
 .menu ul li a {
-  color: var(--clr-white);
+  color: var(--brand-light-2);
   text-decoration: none;
 }
 
 .menu .button {
-  background: var(--clr-white);
+  background: var(--brand-light-2);
   border-radius: 4rem;
   font-weight: 700;
   font-size: 1.8rem;
@@ -259,7 +261,7 @@ body.menu-expanded .menu {
 
 .menu .button:hover {
   background: var(--primary-color);
-  color: var(--clr-white);
+  color: var(--brand-light-2);
 
   filter: brightness(1.1);
   transition: all 0.3s ease-in-out;
@@ -279,11 +281,11 @@ body.menu-expanded button {
 }
 
 body.menu-expanded .logo path {
-  fill: var(--clr-white);
+  fill: var(--brand-light-2);
 }
 
 body.menu-expanded button path {
-  stroke: var(--clr-white);
+  stroke: var(--brand-light-2);
 }
 
 /*=== #HOME =================================*/
@@ -369,7 +371,7 @@ body.menu-expanded button path {
   padding: 2.4rem;
   text-align: left;
 
-  background: var(--clr-white);
+  background: var(--brand-light-2);
 
   border: 1px solid var(--brand-light);
   border-radius: 0.6rem;
@@ -423,7 +425,7 @@ footer {
   padding-block: 6rem;
 
   text-align: left;
-  color: var(--clr-white);
+  color: var(--brand-light-2);
 }
 
 footer .logo {
@@ -437,7 +439,7 @@ footer .logo svg {
 }
 
 footer .logo path {
-  fill: var(--clr-white);
+  fill: var(--brand-light-2);
 }
 
 footer p {
@@ -488,6 +490,7 @@ footer .social-links {
     transform: initial;
     color: initial;
     background-color: initial;
+    filter: initial;
   }
 
   nav#navigation .close-menu,
@@ -526,12 +529,60 @@ footer .social-links {
   }
 
   nav#navigation.scroll .menu ul li a {
-    color: var(--clr-white);
+    color: var(--brand-light-2);
     opacity: 0.7;
   }
 
   nav#navigation.scroll .menu a.button {
-    border: 1px solid var(--clr-white);
-    color: var(--clr-white);
+    border: 1px solid var(--brand-light-2);
+    color: var(--brand-light-2);
+    transition: all 0.3s;
+  }
+
+  nav#navigation .menu a.button:hover {
+    background-color: var(--primary-color);
+    color: var(--brand-light-2);
+    border: none;
+  }
+
+  nav#navigation .menu li a {
+    transition: opacity 0.4s;
+  }
+  nav#navigation .menu li a.active,
+  nav#navigation .menu li a:hover {
+    font-weight: 700;
+    opacity: 1;
+  }
+
+  nav#navigation .menu li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+
+    position: relative;
+    bottom: -1.8rem;
+    left: -0.5rem;
+    transition: width 0.3s;
+  }
+
+  nav#navigation.scroll .menu li a::after {
+    background-color: var(--brand-light-2);
+  }
+  nav#navigation.scroll .menu li a.active::after,
+  nav#navigation .menu li a:hover::after {
+    padding-inline: 0.8rem;
+    width: 100%;
+  }
+  nav#navigation.scroll .menu li a.active,
+  nav#navigation.scroll .menu li a:hover {
+    opacity: 1;
+  }
+  nav#navigation.scroll .menu a.button.active,
+  nav#navigation.scroll .menu a.button:hover {
+    background-color: var(--primary-color);
+    filter: brightness(1.2);
+    border: none;
   }
 }
