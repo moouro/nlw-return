@@ -1,4 +1,4 @@
-const navigation = document.querySelector('#navigation')
+const navigation = document.querySelector("#navigation");
 
 window.addEventListener("scroll", onScroll);
 onScroll();
@@ -20,10 +20,10 @@ function showNavOnScroll() {
 
 function showBackToTopButtonOnScroll() {
   if (scrollY > 500) {
-    let backToTopButton = document.querySelector('#backToTopButton');
+    let backToTopButton = document.querySelector("#backToTopButton");
     backToTopButton.classList.add("show");
   } else {
-    let backToTopButton = document.querySelector('#backToTopButton');
+    let backToTopButton = document.querySelector("#backToTopButton");
     backToTopButton.classList.remove("show");
   }
 }
